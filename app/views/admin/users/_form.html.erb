@@ -1,0 +1,17 @@
+<div >
+	<div >
+			<%= form_for([:admin, @user]) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.check_box :admin %>
+			<%= f.label :admin, "Is admin?" %>
+
+			<%= f.submit %>
+<% end -%>
+	</div>
+</div>

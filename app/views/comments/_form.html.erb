@@ -1,0 +1,9 @@
+<div>
+<%= form_for([@post, @comment]) do |f|%>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :text, "Post comment here" %>
+<%= f.text_area :text %>
+
+<%= f.submit %>
+<% end %>
+</div>

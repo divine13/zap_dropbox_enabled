@@ -1,0 +1,12 @@
+<h1>create a new user</h1>
+<div class="users">
+<h4><%= link_to"New user ", new_admin_user_path %></h4>
+
+<ul>
+	<% @users.each do |user| %>
+      <li>
+	<%=  link_to(user, [:admin, user]) %>
+	<% end %>
+</ul>
+<li>
+</div>
