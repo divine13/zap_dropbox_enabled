@@ -1,0 +1,2 @@
+module Everyone::UsersHelper
+end

@@ -1,0 +1,11 @@
+	<div class="row">
+	<h1>Update your profile</h1>
+<div>
+<%= form_for([:everyone, @user]) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= render 'field', f:f %>
+ 	<%= render 'bio_form', f:f %>
+ 	<%= f.submit "Edit account", class: "btn btn-primary"%>
+</div>
+</div>
+<% end %>

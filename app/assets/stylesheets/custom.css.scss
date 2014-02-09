@@ -24,6 +24,16 @@ body{
 section {
   overflow: auto;
 }
+
+/*microposts*/
+.microposts{
+  list-style: none;
+  margin: 10px 0 0 0;
+  li{
+    padding: 10px 0;
+    border-top: 1px solid pink;
+  }
+}
 textarea {
   resize: vertical;
 }
@@ -46,6 +56,11 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+.hello {
+  align: center;
+  width: 50%;
 }
 
 h2 {
@@ -90,7 +105,7 @@ p {
 #footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
+  border-top: 1px solid pink;
   color: $grayLight;
   a {
     color: $grayLight;
@@ -100,6 +115,7 @@ p {
   }
   small {
     float: left;
+    color: rgb(240, 12, 231);
   }
   ul {
     float: right;
@@ -120,7 +136,7 @@ li{
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid pink;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -144,13 +160,15 @@ aside {
   float: left;
   margin-right: 10px;
 }
-
+.small_words {
+  color: rgb(240, 12, 231);
+}
 .stats {
   overflow: auto;
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $grayLighter;
+    border-left: 1px solid pink;
     color: gray;
     &:first-child {
       padding-left: 0;

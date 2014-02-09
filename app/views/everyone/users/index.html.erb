@@ -1,0 +1,12 @@
+<div class="users">
+	<ul>
+			<% @users.each do |user| %>
+		<li>
+			<div class="image">
+				<%= avatar_for_small(user) %>
+			  <%= link_to(user, [:everyone, user]) %> 
+			  </div>
+		</li>
+			<% end %>
+	</ul>
+</div>

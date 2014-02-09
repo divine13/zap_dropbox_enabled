@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020152939) do
+ActiveRecord::Schema.define(version: 20140209151410) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 20131020152939) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
+  create_table "relashionships", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relashionships", ["followed_id"], name: "index_relashionships_on_followed_id"
+  add_index "relashionships", ["follower_id", "followed_id"], name: "index_relashionships_on_follower_id_and_followed_id", unique: true
+  add_index "relashionships", ["follower_id"], name: "index_relashionships_on_follower_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -59,6 +70,14 @@ ActiveRecord::Schema.define(version: 20131020152939) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "status"
+    t.string   "intrests"
+    t.integer  "age"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

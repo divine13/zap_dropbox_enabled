@@ -1,0 +1,7 @@
+<div  class="users">
+<% @user ||= current_user %>
+<li>Current status: <strong><%= @user.status %></strong></li>
+<li>Intrests: <strong><%= @user.intrests %></strong></li>
+<li>Age: <strong><%= @user.age %></strong></li>
+<li>Short bio: <strong><%= @user.bio %></strong></li>
+</div>

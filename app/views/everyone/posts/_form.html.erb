@@ -1,0 +1,19 @@
+<div>
+<%= form_for(@post, html: {multipart: true}) do |f| %>
+<%= render "shared/error_messages", object: f.object %>
+
+<%= f.label :designer, "Designer name" %>
+<%= f.text_field :designer %>
+
+<%= f.label :contact_details %>
+<%= f.text_field :contact_details %>
+
+<%= f.label :about, "Small describtion about the fashion" %>
+<%= f.text_area :about %>
+
+<%= f.file_field :picture, class: "btn-small btn-primary" %>
+
+<%= f.submit %>
+
+<% end %>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="users">
+<%= provide(:title, "all posts ") %>
+<h1>All posts</h1>
+  <%= will_paginate(@post) %>
+  <% admins_only do  %>
+<h4><%= link_to("new post", new_post_path ) %></h4>
+      <% end %>
+<% @posts.each do |post| %>
+      <li>
+        <div class="image ">
+
+          <%= avatar_for_small(post) %>
+        </div>
+<%= link_to(post.about, post_path(post)) %>
+
+<%# if current_user.admin?  %>
+<%# link_to("delete", destroy_post_path(post)) %>
+<%# end -%>
+      </li>
+<% end %>
+ <%= will_paginate @posts %>
+</div>

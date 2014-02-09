@@ -1,0 +1,16 @@
+			<div class="span5 offset0">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password %>
+			<small class="small_words"> put the same password to make if you dont want change it </small>
+			<%= f.password_field :password %>
+
+			<% if current_user.admin?   %>
+			<%= f.check_box :admin %>
+			<%= f.label :admin, "Is admin?" %>
+			<% end %>
+
+			<p class="image"><%= avatar_for(@user)%></p>
+ 	<h4>update profile photo <%= f.file_field :picture, class: "btn btn-primary"%></h4>
+		</div>

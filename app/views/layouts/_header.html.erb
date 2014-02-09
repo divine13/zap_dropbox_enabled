@@ -1,14 +1,16 @@
 <header  class="navbar navbar">
     	<div class="navbar-inner">
     		<div class="container">
-    			<%= link_to("Zap!", root_path, id: "logo") %>
     			<nav>
+            <%= link_to("Zap!", root_path, id: "logo") %>
     	                <ul class="nav pull-right">
                         <li><%= link_to "Home", root_path %></li>
                           <li><%= link_to "Posts", posts_path %></li>
+                           <li> <%= link_to "People`s trends", '#' %></li>
                     <% if(signed_in?)  %>
                               <% if(current_user.admin?) %>
-                                  <li> <%= link_to("logged in as: #{current_user}", admin_root_path ) %> </li>
+                                  <li> <%= link_to("logged in as: #{current_user}",
+                                   edit_everyone_user_path(current_user)) %> </li>
                                   <% else %>
                         <li> <%= link_to("logged in as: #{current_user}" ) %> </li>
                                   <% end %>

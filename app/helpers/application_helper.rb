@@ -18,4 +18,20 @@ module ApplicationHelper
 		current_user.try(:admin?)
 		nil
 	end
+
+	 def avatar_for_small(post)
+         if post.picture?
+          image_tag post.picture.url(:thumb)
+         else 
+          image_tag "thumb/profile.jpg"
+         end
+     end
+
+     def avatar_for(post)
+     	if post.picture?
+     	image_tag post.picture.url(:medium)
+     	else
+     		image_tag "medium/profile.jpg"
+     	end 
+     end
 end

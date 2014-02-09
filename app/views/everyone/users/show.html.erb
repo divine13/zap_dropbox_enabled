@@ -1,0 +1,33 @@
+<div class="row">
+<aside class="span4">
+	<section>
+<h1>
+<p class="image"><%= avatar_for(@user)%> </p> <br >
+<%=  @user.email %>
+</h1>
+ </section>
+ <section>
+ 	
+ 	<%= render 'stats' %>
+ </section>
+ <section>
+ 	<%= render 'show_bio' %>
+ </section>
+</aside>
+<div class="span8">
+	<%= render 'follow_form'  if signed_in? %>
+<% if(@user.posts.any?) %>
+<h3>posts[<%= @user.posts.count %>]</h3>
+<ol class="microposts">
+<% @user.posts.each do |post| %>
+<div class="image">
+<%= image_tag post.picture %> <br >
+</div>
+<div class="users">
+<%= post.about %> 
+</div>
+<% end  %>
+</ol>
+<% end %>
+</div>
+</div>

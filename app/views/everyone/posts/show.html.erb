@@ -1,0 +1,25 @@
+
+<%= provide(:title, "#{@post.designer}`s trend") %>
+<span class="image image-full">
+<%= image_tag @post.picture.url if @post.picture? %>
+  </span>
+<div id="detail">
+<div class="users">
+<li><strong>Designer:</strong> <%= @post.designer %> </li>
+<li><strong> More about this trend:</strong> <%= @post.about %></li>
+<li><strong>Contact details for this Trend:</strong> <%= @post.contact_details %></li>
+</div>
+</div>
+<% admins_only do  %>
+<h4 class="ft"> <%= link_to('Edit post', edit_post_path(@post)) %></h4>
+    <% end %>
+<h3>comments</h3>
+<div id="comment">
+	<% if @post.comments.exists? %> <co class="ch10_191_1" />
+	<%= render @post.comments.select(&:persisted?) %>
+	<% else  %>
+	There is no comments for this ticket
+	<% end -%>
+
+	<%= render 'comments/form' %>
+</div>

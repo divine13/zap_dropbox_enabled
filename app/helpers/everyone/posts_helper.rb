@@ -1,0 +1,2 @@
+module Everyone::PostsHelper
+end

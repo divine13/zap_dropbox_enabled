@@ -4,6 +4,10 @@ Zap::Application.routes.draw do
   get "static_pages/index"
   get "static_pages/about"
   get "static_pages/contact_us"
+
+  
+  resources :relashionships, only: [:create, :destroy]
+
   devise_for :users
   
 
@@ -11,7 +15,7 @@ Zap::Application.routes.draw do
 
     put "admin/users/:user_id/permissions", to: 
      'admin/permissions#update', as: 'update_user_permissions'
-     
+
    namespace :admin do
     root "base#index"
       resources :users do 
@@ -19,6 +23,18 @@ Zap::Application.routes.draw do
       end
     end
     
+    namespace :everyone do
+      root "everyone#index"
+      resources :users do 
+        member do 
+          get :following, :followers
+        end 
+      end
+      resources :posts do 
+        resources :comments
+      end
+    end
+
     resources :posts do 
       resources :comments
     end
